@@ -1,4 +1,4 @@
-require 'speed_up_rails/request_data'
+require 'speedup/request_data'
 
 module Perfdashboard
 
@@ -12,16 +12,16 @@ module Perfdashboard
         adapter_class_name = adapter.to_s.camelize
         adapter_class =
           begin
-            require "speed_up_rails/adapters/#{adapter}"
+            require "speedup/adapters/#{adapter}"
           rescue LoadError => e
             raise "Could not find adapter for #{adapter} (#{e})"
           else
-            ::SpeedUpRails::Adapters.const_get(adapter_class_name)
+            ::Speedup::Adapters.const_get(adapter_class_name)
           end
         adapter_class.new(*parameters)
       when nil
-        require 'speed_up_rails/adapters/memory'
-        ::SpeedUpRails::Adapters::Memory.new
+        require 'speedup/adapters/memory'
+        ::Speedup::Adapters::Memory.new
       else
         adapter
       end
@@ -42,7 +42,7 @@ module Perfdashboard
     end
 
     def load(contexts, data)
-      @data = SpeedUpRails::RequestData.new.load(contexts, data)
+      @data = Speedup::RequestData.new.load(contexts, data)
     end
 
     def save

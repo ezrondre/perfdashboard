@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : 'Performance Dashboard' %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : 'Performance Dashboard' %>">
     <%= stylesheet_link_tag 'perfdashboard/application', media: 'all' %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <%= javascript_include_tag 'perfdashboard/application' %>
     <%= csrf_meta_tags %>
   </head>
@@ -14,7 +15,7 @@
     </header>
     <main class="container-fluid" role="main">
        <%= render 'layouts/perfdashboard/messages' %>
-       <%= yield %>
+       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>
 </html>

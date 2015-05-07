@@ -4,8 +4,8 @@ class CreatePerfdashboardContexts < ActiveRecord::Migration
       t.integer :context_uid
       t.string :type
       t.string :name
-      t.references :request, index: true, foreign_key: true
-      t.integer :context_data_count
+      t.references :request, index: true #, foreign_key: true
+      t.integer :context_infos_count, default: 0
 
       t.timestamps null: false
     end

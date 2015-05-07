@@ -1,4 +1,7 @@
 require 'bootstrap-sass'
+require 'bootstrap_form'
+require 'groupdate'
+require 'chartkick'
 
 module Perfdashboard
   class Engine < ::Rails::Engine

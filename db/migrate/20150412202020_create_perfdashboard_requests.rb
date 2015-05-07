@@ -6,7 +6,7 @@ class CreatePerfdashboardRequests < ActiveRecord::Migration
       t.float :duration
       t.string :controller
       t.string :action
-      t.string :path
+      t.text :path
       t.boolean :error, default: false
       t.boolean :xhr, default: false
       t.string :format, default: 'html'
