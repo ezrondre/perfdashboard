@@ -1,0 +1,21 @@
+<% content_for :content do %>
+  <div class="row">
+    <div class="col-xs-2 sidebar">
+      <% if @server && !@server.new_record? %>
+        <h2><%= @server.name %></h2>
+        <%#= link_to('Actions', server_actions_path(@server)) %>
+      <% end %>
+      <ul class="nav nav-sidebar">
+        <li><%= link_to('Requests', params.merge(context: nil) ) %></li>
+        <% @contexts.each do |context| %>
+          <li><%= link_to(context.to_s.humanize, params.merge(context: context) ) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-xs-10 col-xs-offset-2">
+      <h2><%= @action || 'Preview' %><%= " > #{@context}" if @context %></h2>
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/perfdashboard/application' %>

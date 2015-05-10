@@ -1,0 +1,24 @@
+<h3>Registered servers</h3>
+<table class="table">
+  <tbody>
+    <% @servers.each do |server| %>
+      <tr>
+        <td><%= server.name %></td>
+        <td><%= server.host %></td>
+        <td><%= server.api_key %></td>
+        <td><%= link_to( 'Report', server_requests_path(server) ) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Host</th>
+      <th>API key</th>
+      <th></th>
+    </tr>
+  </thead>
+</table>
+
+<h3>New server</h3>
+<%= render 'form', server: @server %>

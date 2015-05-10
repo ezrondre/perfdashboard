@@ -1,0 +1,8 @@
+<strong>Average query count: </strong>
+<%= @context_data.average_info_count %>
+
+<%= area_chart @context_data.joins(:request).group_by_minute("#{Perfdashboard::Request.table_name}.time").average(:context_infos_count) %>
+
+
+<h3>Sample request</h3>
+<%= render 'perfdashboard/common/queries_list', queries: @context_data.last.context_infos %>

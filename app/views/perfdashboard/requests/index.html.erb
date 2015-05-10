@@ -21,15 +21,8 @@
   <h3>Sample request</h3>
   <strong>id:</strong> <%= request.id %>
   <strong>duration:</strong> <%= request.duration %>
-  <strong>queries:</strong> <%= queries.count %> (<%= format_ms queries.sum(:duration) %>)
-  <table id="queries" class="table">
-    <% queries.each do |query| %>
-      <tr>
-        <td><%= format_ms query.duration %></td>
-        <td><%= query.data['query'] %></td>
-      </tr>
-    <% end %>
-  </table>
+
+  <%= render 'perfdashboard/common/queries_list', queries: queries %>
 
 <% else %>
   <h3>Most time consuming</h3>
