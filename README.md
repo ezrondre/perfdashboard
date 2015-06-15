@@ -35,6 +35,10 @@ You can even mount it to the '/' if you use it for only this purpouse.
 Next migrate, go to the application and in the Servers section register your applications.
 Than copy the api_keys to your prefered secrets storage and use it in configuration of speedup-rails gem in your monitored app ( you have to use server adapter ).
 
+### Supported databases
+Currently the gem is tested aginst PostgreSQL and MySQL.
+It certainly won't run on SQLite since it uses a groupdate gem, wich requires advanced date techniques from sql.
+
 ## License
 
 See MIT-LICENSE for license information.
