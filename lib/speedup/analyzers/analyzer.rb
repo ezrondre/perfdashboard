@@ -1,4 +1,4 @@
-module Perfdashboard
+module SpeedupDashboard
   class Analyzer
 
     def initialize(options={})

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Perfdashboard::Engine => '/'
+  mount SpeedupDashboard::Engine => '/'
 end

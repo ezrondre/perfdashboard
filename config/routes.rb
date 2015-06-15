@@ -1,4 +1,4 @@
-Perfdashboard::Engine.routes.draw do
+SpeedupDashboard::Engine.routes.draw do
 
   root 'requests#index'
 

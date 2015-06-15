@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150421222753) do
 
-  create_table "perfdashboard_context_infos", force: :cascade do |t|
+  create_table "speedup_dashboard_context_infos", force: :cascade do |t|
     t.integer  "context_id",  limit: 4
     t.string   "description", limit: 255
     t.float    "duration",    limit: 24
@@ -23,21 +23,21 @@ ActiveRecord::Schema.define(version: 20150421222753) do
     t.datetime "updated_at",                null: false
   end
 
-  add_index "perfdashboard_context_infos", ["context_id"], name: "index_perfdashboard_context_infos_on_context_id", using: :btree
+  add_index "speedup_dashboard_context_infos", ["context_id"], name: "index_speedup_dashboard_context_infos_on_context_id", using: :btree
 
-  create_table "perfdashboard_contexts", force: :cascade do |t|
-    t.integer  "context_uid",        limit: 4
-    t.string   "type",               limit: 255
-    t.string   "name",               limit: 255
-    t.integer  "request_id",         limit: 4
-    t.integer  "context_data_count", limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+  create_table "speedup_dashboard_contexts", force: :cascade do |t|
+    t.integer  "context_uid",         limit: 4
+    t.string   "type",                limit: 255
+    t.string   "name",                limit: 255
+    t.integer  "request_id",          limit: 4
+    t.integer  "context_infos_count", limit: 4,   default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
-  add_index "perfdashboard_contexts", ["request_id"], name: "index_perfdashboard_contexts_on_request_id", using: :btree
+  add_index "speedup_dashboard_contexts", ["request_id"], name: "index_speedup_dashboard_contexts_on_request_id", using: :btree
 
-  create_table "perfdashboard_requests", force: :cascade do |t|
+  create_table "speedup_dashboard_requests", force: :cascade do |t|
     t.string   "request_uid",   limit: 255
     t.datetime "time"
     t.float    "duration",      limit: 24
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 20150421222753) do
     t.integer  "server_id",     limit: 4
   end
 
-  add_index "perfdashboard_requests", ["server_id"], name: "index_perfdashboard_requests_on_server_id", using: :btree
+  add_index "speedup_dashboard_requests", ["server_id"], name: "index_speedup_dashboard_requests_on_server_id", using: :btree
 
-  create_table "perfdashboard_servers", force: :cascade do |t|
+  create_table "speedup_dashboard_servers", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "api_key",    limit: 255
     t.string   "host",       limit: 255

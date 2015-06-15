@@ -1,4 +1,4 @@
-# Perfdashboard
+# Speedup Dashboard
 
 ## Overview
 
@@ -12,20 +12,20 @@ It provides basic visualizations and analysis for this collected data.
 
 ## Install
 
-Perfdashboard is meant to be an standalone application.
+Dashboard is meant to be an standalone application.
 It is implemented as an engine however, so it could be used in monitored application itself.
 Use this in small applications and in development environment only.
 
-The easiest way to install perfdashboard is by using Ruby Gems.
+The easiest way to install speedup-dashboard is by using Ruby Gems.
 If you creating new app for it, follow Rails start guide first.
 
 To install put in your Gemfile:
 ```ruby
-gem 'perfdashboard'
+gem 'speedup-dashboard'
 ```
 And to your config/routes.rb file:
 ```ruby
-mount Perfdashboard::Engine => 'perfdashboard'
+mount SpeedupDashboard::Engine => 'speedup_dashboard'
 ```
 
 You can even mount it to the '/' if you use it for only this purpouse.
@@ -39,7 +39,7 @@ See MIT-LICENSE for license information.
 
 ## Development
 
-Code is located at https://github.com/ezrondre/perfdashboard
+Code is located at https://github.com/ezrondre/speedup-dashboard
 
 Any contribution, or feedback will be appreciated.
 
