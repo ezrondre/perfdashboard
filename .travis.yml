@@ -1,0 +1,4 @@
+services: mysql
+
+before_script:
+  - mysql -e 'create database speedup_test;'
