@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = SpeedupDashboard::VERSION
   s.authors     = ["Ondřej Ezr"]
   s.email       = ["ezrondre@fit.cvut.cz"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/ezrondre/speedup-dashboard"
   s.summary     = "Performance dashboard is page, where performance of your rails app is pretty printed."
   s.description = "Performance dashboard creates an front-end for SpeedupRails gem and for now, there is proly no other use for it."
   s.license     = "MIT"
