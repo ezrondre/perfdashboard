@@ -1,4 +1,6 @@
 # Speedup Dashboard
+[![Gem Version](https://badge.fury.io/rb/speedup-dashboard.svg)](http://badge.fury.io/rb/speedup-dashboard)
+[![Build Status](https://travis-ci.org/ezrondre/speedup-dashboard.png?branch=master)](https://travis-ci.org/ezrondre/speedup-dashboard)
 
 ## Overview
 

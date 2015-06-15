@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :speedup_dashboard_context, :class => 'SpeedupDashboard::Context' do
-    context_id 1
-name "MyString"
-request nil
-context_data_count 1
+    sequence(:context_uid) {|n| n+1 }
+    name { %w(request partials queries bullet) }
+    association(:request, factory: :speedup_dashboard_request)
   end
 
 end

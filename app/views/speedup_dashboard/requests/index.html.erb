@@ -28,7 +28,7 @@
   <h3>Most time consuming</h3>
   <table class="table">
     <tbody>
-      <% @requests.group(:controller, :action).order(duration: :desc).limit(5).average(:duration).each do |request, value| %>
+      <% @requests.group(:controller, :action).order(SpeedupDashboard::Request.arel_table[:duration].average.to_sql+' DESC').limit(5).average(:duration).each do |request, value| %>
         <tr>
           <td>
             <%= link_to(params.merge(c: request.first, a: request.second)) do %>
